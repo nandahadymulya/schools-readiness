@@ -1,5 +1,12 @@
 # Schools Readiness
 
+Mini Project Understand Everything about Vue JS Front-End Engineer
+
+## Links
+
+1. Figma: [click here!](https://www.figma.com/file/HcaalQrn5Oj0vzFZSNSELS/VueJS-Alterra-Academy?node-id=206%3A23)
+2. Google Slides: [click here!](https://docs.google.com/presentation/d/1YKr88KISUEB7O1KA206QOex9C3QEhq97retoYXWLAns/edit?usp=sharing)
+
 ## Build Setup
 
 ```bash
