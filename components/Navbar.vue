@@ -48,7 +48,7 @@
         <!-- End -->
 
         <!-- Login Button / Profile Photos -->
-        <div class="flex flex-col lg:flex-row bg-black">
+        <div class="flex flex-col lg:flex-row">
           <div v-if="!userLogin" class="block">
             <NuxtLink
               to="/login"
