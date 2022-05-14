@@ -1,0 +1,14 @@
+query getSchools {
+  schools {
+    sch_address
+    sch_id
+    sch_image
+    sch_kab_kota
+    sch_kec
+    sch_name
+    sch_npsn
+    sch_province
+    sch_website
+    sch_zip_code
+  }
+}
