@@ -7,7 +7,7 @@
         <div>
           <NuxtLink to="/" class="font-bold lg:text-2xl text-blue-900"
             >Sch<span class="text-yellow-400">oo</span
-            ><span class="text-blue-600">l.</span>
+            ><span class="text-blue-500">l.</span>
           </NuxtLink>
         </div>
         <div>
