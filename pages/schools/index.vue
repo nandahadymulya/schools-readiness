@@ -20,7 +20,7 @@
     <div>
       <ul>
         <li v-for="(sch, index) in schools" :key="index">
-          {{ sch.name }}
+          {{ sch.sch_name }}
         </li>
       </ul>
     </div>

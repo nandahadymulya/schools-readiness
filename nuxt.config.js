@@ -20,7 +20,8 @@ export default {
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
     // ApolloClientPlugin,
-    '~/plugins/apollo-error-handler.js',
+    // '~/plugins/apollo-client.js',
+    // '~/plugins/apollo-error-handler.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -29,7 +30,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    // '@nuxtjs/eslint-module',
+    '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt/postcss8',
@@ -42,6 +43,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/axios
+
     '@nuxtjs/apollo',
     '@nuxtjs/composition-api/module',
   ],
@@ -85,9 +87,5 @@ export default {
         autoprefixer: {},
       },
     },
-    transpile: [
-      // Vue Apollo Composable
-      '@vue/apollo-composable',
-    ],
   },
 }
