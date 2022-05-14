@@ -4,7 +4,7 @@
     <main>
       <div class="flex w-full h-96 justify-center align-center text-center">
         <div class="flex flex-col justify-center">
-          <h1 class="text-6xl font-bold text-blue-900">
+          <h1 class="text-6xl font-extrabold text-blue-900">
             Inside School Readiness <br />
             <span class="text-yellow-500">for Blended-Learning </span>
           </h1>
@@ -25,7 +25,7 @@
           class="flex flex-col w-1/2 justify-center align-center text-center"
         >
           <p class="text-blue-500">Topic of Readiness</p>
-          <h1 class="text-4xl text-blue-900">Blended-Learning</h1>
+          <h1 class="text-4xl font-bold text-blue-900">Blended-Learning</h1>
           <p class="font-light lg:pt-5">
             Blended Learning is a learning strategy that can develop critical
             thinking skills <br />
