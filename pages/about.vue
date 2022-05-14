@@ -36,9 +36,9 @@
 
         <div class="flex w-1/2 justify-center align-center">
           <img
-            src="blendedlearning.jpg"
+            src="assets/img/blendedlearning.jpg"
             class="rounded-md"
-            alt="SCH Main Image"
+            alt="Blended-Learning Image"
           />
         </div>
       </div>
@@ -49,14 +49,18 @@
     <section class="lg:py-28">
       <div class="flex w-full h-96 justify-center align-center">
         <div class="flex w-1/2 justify-center align-center">
-          <img src="kmeans.jpg" class="rounded-md" alt="SCH Main Image" />
+          <img
+            src="assets/img/kmeans.jpg"
+            class="rounded-md"
+            alt="K-Means Image"
+          />
         </div>
 
         <div
           class="flex flex-col w-1/2 justify-center align-center text-center"
         >
           <p class="text-blue-500">Algorithm Technology</p>
-          <h1 class="text-4xl text-blue-900">K-Means</h1>
+          <h1 class="text-4xl font-bold text-blue-900">K-Means</h1>
           <p class="font-light lg:pt-5">
             The K-Means algorithm is one of the Clustering algorithms <br />
             which is included in the unsupervised learning group <br />
@@ -75,7 +79,9 @@
           class="flex flex-col w-1/2 justify-center align-center text-center"
         >
           <p class="text-blue-500">Algorithm Technology</p>
-          <h1 class="text-4xl text-blue-900">Support Vector Machines</h1>
+          <h1 class="text-4xl font-bold text-blue-900">
+            Support Vector Machines
+          </h1>
           <p class="font-light lg:pt-5">
             SVM or Support Vector Machine is a classification algorithm <br />
             with the aim of finding a separator function that can separate two
@@ -85,7 +91,7 @@
         </div>
 
         <div class="flex w-1/2 justify-center align-center">
-          <img src="svm.jpg" class="rounded-md" alt="SCH Main Image" />
+          <img src="assets/img/svm.jpg" class="rounded-md" alt="SVM Image" />
         </div>
       </div>
     </section>
@@ -95,14 +101,18 @@
     <section class="lg:py-28">
       <div class="flex w-full h-96 justify-center align-center">
         <div class="flex w-1/2 justify-center align-center">
-          <img src="developer.jpg" class="rounded-md" alt="SCH Main Image" />
+          <img
+            src="assets/img/developer.jpg"
+            class="rounded-md"
+            alt="Developer Image"
+          />
         </div>
 
         <div
           class="flex flex-col w-1/2 justify-center align-center text-center"
         >
           <p class="text-blue-500">Developer</p>
-          <h1 class="text-4xl text-blue-900">Nanda Hady Mulya</h1>
+          <h1 class="text-4xl font-bold text-blue-900">Nanda Hady Mulya</h1>
           <p class="font-light lg:pt-5">
             A final-year informatics engineering student, <br />
             concentrated in Artificial Intelligence (AI) whose highly motivated,

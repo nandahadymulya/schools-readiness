@@ -27,7 +27,7 @@
           </div>
         </div>
         <div class="flex justify-end w-1/2">
-          <img src="main-img.jpg" alt="SCH Main Image" />
+          <img src="assets/img/home.jpg" alt="SCH Main Image" />
         </div>
       </div>
     </main>
@@ -147,25 +147,25 @@ export default {
     return {
       depedencies: [
         {
-          logo: 'js.svg',
+          logo: 'assets/logo/js.svg',
         },
         {
-          logo: 'nuxt.svg',
+          logo: 'assets/logo/nuxt.svg',
         },
         {
-          logo: 'hasura.svg',
+          logo: 'assets/logo/hasura.svg',
         },
         {
-          logo: 'graphql.svg',
+          logo: 'assets/logo/graphql.svg',
         },
         {
-          logo: 'apollo.svg',
+          logo: 'assets/logo/apollo.svg',
         },
         {
-          logo: 'python.svg',
+          logo: 'assets/logo/python.svg',
         },
         {
-          logo: 'django.svg',
+          logo: 'assets/logo/django.svg',
         },
       ],
     }
