@@ -19,15 +19,12 @@
 
     <div>
       <ul>
-        <li v-for="sch in schools" :key="sch.id">
+        <li v-for="(sch, index) in schools" :key="index">
           {{ sch.name }}
         </li>
       </ul>
     </div>
-    <div
-      class="
-    "
-    >
+    <div class="">
       <div
         aria-label="group of cards"
         tabindex="0"
@@ -41,11 +38,11 @@
             class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
           >
             <div class="flex items-center border-b border-gray-200 pb-6">
-              <img
+              <!-- <img
                 src="https://cdn.tuk.dev/assets/components/misc/doge-coin.png"
                 alt="coin avatar"
                 class="w-12 h-12 rounded-full"
-              />
+              /> -->
               <div class="flex items-start justify-between w-full">
                 <div class="pl-3 w-full">
                   <p
@@ -454,27 +451,14 @@
   </div>
 </template>
 <script>
-import gql from 'graphql-tag'
+import getSchools from '@/graphql/getSchools.gql'
 
 export default {
   name: 'ShcoolsPage',
   apollo: {
-    schools: gql`
-      query getSch {
-        schools {
-          sch_address
-          sch_id
-          sch_image
-          sch_kab_kota
-          sch_kec
-          sch_name
-          sch_npsn
-          sch_province
-          sch_website
-          sch_zip_code
-        }
-      }
-    `,
+    schools: {
+      query: getSchools,
+    },
   },
 }
 </script>

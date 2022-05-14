@@ -19,8 +19,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // ApolloClientPlugin
-    '~/plugins/apollo-client.js',
+    // ApolloClientPlugin,
+    '~/plugins/apollo-error-handler.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -29,7 +29,7 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/eslint
-    '@nuxtjs/eslint-module',
+    // '@nuxtjs/eslint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
     '@nuxt/postcss8',
@@ -72,6 +72,7 @@ export default {
     clientConfigs: {
       default: {
         httpEndpoint: 'https://kampus-merdeka-28.hasura.app/v1/graphql',
+        wsEndpoint: 'ws://kampus-merdeka-28.hasura.app/v1/graphql',
       },
     },
   },
