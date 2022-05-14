@@ -40,7 +40,7 @@
           <div v-for="item in menus" :key="item.name" class="block">
             <NuxtLink
               :to="item.path"
-              class="block px-5 py-2 lg:py-5 text-gray-300 hover:text-yellow-500 active:text-blue-900"
+              class="block px-5 py-2 lg:py-5 text-gray-300 transition duration-300 hover:text-yellow-500 active:text-blue-900"
               >{{ item.name }}</NuxtLink
             >
           </div>
@@ -52,7 +52,7 @@
           <div v-if="!userLogin" class="block">
             <NuxtLink
               to="/login"
-              class="block lg:m-1 px-4 lg:px-7 py-2 lg:py-3 border-0 lg:border-2 rounded-lg text-blue-900 hover:text-yellow-500 hover:border-yellow-500 active:text-blue-900"
+              class="block lg:m-1 px-4 lg:px-7 py-2 lg:py-3 border-0 lg:border-2 rounded-lg text-blue-900 transition duration-300 hover:text-yellow-500 hover:bg-blue-900 active:text-blue-900"
               >Login</NuxtLink
             >
           </div>

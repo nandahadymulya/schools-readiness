@@ -1,11 +1,11 @@
 <template>
-  <div class="p-8">
+  <div>
     <!-- Main Cover -->
     <main>
       <div class="flex w-full h-96 justify-center align-center text-center">
         <div class="flex flex-col justify-center">
-          <h1 class="text-6xl font-bold text-blue-900">
-            List of Schools<br />
+          <h1 class="text-6xl font-extrabold text-blue-900">
+            List of Schools <br />
             <span class="text-yellow-500">Who are Participants</span>
           </h1>
           <p class="font-light lg:pt-5">

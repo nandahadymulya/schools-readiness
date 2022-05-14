@@ -2,22 +2,26 @@
   <div>
     <!-- Main Hero -->
     <main>
-      <div class="flex w-auto h-96 justify-center align-center">
-        <div class="flex flex-col justify-start align-center w-1/2">
-          <p>School education readiness.</p>
-          <h1>
+      <div class="flex w-full h-96 justify-center align-center">
+        <div class="flex flex-col w-1/2 justify-center align-center">
+          <p class="text-blue-500">School education readiness.</p>
+          <h1 class="text-4xl font-bold text-blue-900 lg:pt-5">
             Implementation <br />
-            <span>Blended-Learning</span> Methods
+            <span class="text-yellow-500">Blended-Learning</span> Methods
           </h1>
-          <p>
+          <p class="font-light lg:pt-5">
             become a professional education that enhances <br />
             students' experience and competitiveness internationally.
           </p>
-          <div>
-            <button>
+          <div class="flex gap-6 lg:pt-5">
+            <button
+              class="bg-blue-900 text-blue-100 lg:p-2 border-2 border-blue-900 rounded hover: ease-in hover:duration-300"
+            >
               <NuxtLink to="/register"> Get Started </NuxtLink>
             </button>
-            <button>
+            <button
+              class="bg-white text-blue-900 border-2 border-slate-400 rounded lg:p-2"
+            >
               <NuxtLink to="/about"> Learn More </NuxtLink>
             </button>
           </div>
