@@ -19,8 +19,9 @@
 
     <div>
       <ul>
-        <li v-for="(sch, index) in schools" :key="index">
-          {{ sch.sch_name }}
+        <li v-for="(school, index) in schools" :key="index">
+          {{ school.sch_name }}
+          <Nuxt-Link :to="`/schools/${school.sch_id}`">Detail</Nuxt-Link>
         </li>
       </ul>
     </div>
@@ -460,5 +461,6 @@ export default {
       query: getSchools,
     },
   },
+  methods: {},
 }
 </script>
