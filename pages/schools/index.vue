@@ -17,18 +17,8 @@
     </main>
     <!-- End -->
 
-    <!-- 
-    <div>
-      <ul>
-        <li v-for="(school, index) in schools" :key="index">
-          {{ school.sch_name }}
-          <Nuxt-Link :to="`/schools/${school.sch_id}`">Detail</Nuxt-Link>
-        </li>
-      </ul>
-    </div> -->
-
     <!-- Filter  -->
-    <label class="relative block">
+    <!-- <label class="relative block">
       <span class="sr-only">Search</span>
       <span class="absolute inset-y-0 left-0 flex items-center pl-2">
         <svg
@@ -54,7 +44,7 @@
         name="search"
         @keyup="getSearchSchool"
       />
-    </label>
+    </label> -->
     <!-- End -->
 
     <ApolloQuery :query="require('@/graphql/getSchools.gql')">
@@ -163,15 +153,15 @@
 export default {
   name: 'ShcoolsPage',
   components: {},
-  data() {
-    return {
-      searchSchool: '',
-    }
-  },
+  // data() {
+  //   return {
+  //     searchSchool: '',
+  //   }
+  // },
   methods: {
-    getSearchSchool() {
-      console.log(this.searchSchool)
-    },
+    // getSearchSchool() {
+    //   console.log(this.searchSchool)
+    // },
   },
 }
 </script>
