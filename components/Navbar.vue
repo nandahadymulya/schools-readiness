@@ -1,6 +1,8 @@
 <template>
-  <nav class="w-full fixed shadow lg:bg-white">
-    <div class="flex flex-col lg:flex-row lg:items-center lg:px-28 lg:py-0">
+  <nav class="w-full fixed shadow bg-white">
+    <div
+      class="flex flex-col lg:flex-row w-full lg:items-center lg:px-28 lg:py-0"
+    >
       <div
         class="flex items-center justify-between px-4 py-4 lg:px-0 lg:py-0 border-b border-b-indigo-300 lg:border-b-0"
       >

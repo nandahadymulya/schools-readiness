@@ -1,5 +1,5 @@
-query MyQuery {
-  schools(order_by: { sch_npsn: asc }) {
+mutation MyQuery($schInput: SchInputFilter) {
+  schools(input: $schInput) {
     sch_id
     sch_npsn
     sch_name
