@@ -97,10 +97,7 @@
                       </p>
                     </div>
                     <div role="img" aria-label="link">
-                      <Nuxt-Link
-                        :to="`/schools/${sch.sch_id}`"
-                        class="text-transparent"
-                      >
+                      <Nuxt-Link :to="`/schools/${sch.sch_id}`">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           class="h-6 w-6 transition ease-in duration-300 hover:text-yellow-500"
