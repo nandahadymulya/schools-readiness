@@ -1,8 +1,6 @@
 <template>
   <div class="blank">
-    <div class="lg:p-28">
-      <Nuxt />
-    </div>
+    <Nuxt />
   </div>
 </template>
 <script>
