@@ -56,6 +56,9 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      sizes: [64, 120, 144, 152, 192, 384, 512],
+    },
     meta: {
       title: 'School.',
       author: 'Nanda Hady Mulya',
