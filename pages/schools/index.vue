@@ -79,25 +79,28 @@
                   <img
                     src="assets/logo/academic.svg"
                     alt="coin avatar"
-                    class="w-12 h-12 bg-blue-100 rounded-full"
+                    class="w-12 h-12 border rounded-full"
                   />
                   <div class="flex items-start justify-between w-full">
                     <div class="pl-3 w-full">
                       <p
                         tabindex="0"
-                        class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
+                        class="focus:outline-none text-sm leading-5 text-gray-800"
                       >
-                        {{ sch.sch_name }}
+                        NPSN: {{ sch.sch_npsn }}
                       </p>
                       <p
                         tabindex="0"
-                        class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
+                        class="focus:outline-none text-xl leading-normal pt-2 font-semibold text-gray-800"
                       >
-                        {{ sch.sch_npsn }}
+                        {{ sch.sch_name }}
                       </p>
                     </div>
                     <div role="img" aria-label="link">
-                      <Nuxt-Link :to="`/schools/${sch.sch_id}`">
+                      <Nuxt-Link
+                        :to="`/schools/${sch.sch_id}`"
+                        class="text-transparent"
+                      >
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           class="h-6 w-6 transition ease-in duration-300 hover:text-yellow-500"
@@ -119,20 +122,24 @@
                 <div class="px-2">
                   <p
                     tabindex="0"
-                    class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
+                    class="focus:outline-none text-sm leading-5 py-4 text-gray-800"
                   >
-                    Address: {{ sch.sch_address }}
+                    Location: {{ sch.sch_address }}, {{ sch.sch_kab_kota }}
+                    {{ sch.sch_province }}
                   </p>
-                  <div tabindex="0" class="focus:outline-none flex">
+                  <div
+                    tabindex="0"
+                    class="focus:outline-none flex justify-center"
+                  >
                     <div
-                      class="py-2 px-4 text-xs leading-3 text-blue-900 rounded-full bg-blue-100"
+                      class="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500"
                     >
-                      {{ sch.sch_kab_kota }}
+                      {{ sch.sch_status }} Ready
                     </div>
                     <div
-                      class="py-2 px-4 ml-3 text-xs leading-3 text-blue-900 rounded-full bg-blue-100"
+                      class="py-2 px-4 ml-3 text-xs leading-3 text-white rounded-full bg-red-500"
                     >
-                      {{ sch.sch_province }}
+                      {{ sch.sch_status }} Not Yet Ready
                     </div>
                   </div>
                 </div>
