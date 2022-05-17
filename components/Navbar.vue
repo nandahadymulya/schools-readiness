@@ -5,7 +5,7 @@
         class="flex items-center justify-between px-4 py-4 lg:px-0 lg:py-0 border-b border-b-indigo-300 lg:border-b-0"
       >
         <div>
-          <NuxtLink to="/" class="font-bold lg:text-2xl text-blue-900"
+          <NuxtLink to="/" class="font-bold lg:text-3xl text-blue-900"
             >Sch<span class="text-yellow-500">oo</span
             ><span class="text-blue-500">l.</span>
           </NuxtLink>
