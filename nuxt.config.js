@@ -79,7 +79,7 @@ export default {
     clientConfigs: {
       default: {
         httpEndpoint: 'https://kampus-merdeka-28.hasura.app/v1/graphql',
-        wsEndpoint: 'ws://kampus-merdeka-28.hasura.app/v1/graphql',
+        wsEndpoint: 'wss://kampus-merdeka-28.hasura.app/v1/graphql',
       },
     },
   },
