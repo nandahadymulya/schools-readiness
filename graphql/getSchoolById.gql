@@ -1,7 +1,0 @@
-query getSchoolById($id: uuid!) {
-  schools(where: { _id: { _eq: $id } }) {
-    _id
-    name
-    address
-  }
-}

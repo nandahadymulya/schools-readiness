@@ -47,108 +47,86 @@
     </label> -->
     <!-- End -->
 
-    <ApolloQuery :query="require('@/graphql/getSchools.gql')">
-      <template slot-scope="{ result: { loading, error, data } }">
-        <!-- Loading -->
-        <div v-if="loading">Loading</div>
-
-        <!-- Error -->
-        <div v-else-if="error">
-          <p>Error: {{ error.message }}</p>
-        </div>
-
-        <!-- Result -->
-        <div v-else-if="data">
-          <!-- Content -->
-          <div
-            aria-label="group of cards"
-            tabindex="0"
-            class="focus:outline-none flex justify-center py-8"
-          >
-            <div
-              class="grid grid-cols-1 lg:grid-cols-4 gap-4 place-content-center"
+    <!-- Content -->
+    <div
+      aria-label="group of cards"
+      tabindex="0"
+      class="focus:outline-none flex justify-center py-8"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 place-content-center">
+        <div
+          v-for="(school, index) in getSchools"
+          :key="(school.sch_id, index)"
+          tabindex="0"
+          aria-label="card 1"
+          class="focus:outline-none lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
+        >
+          <div class="flex items-center border-b border-gray-200 pb-6">
+            <img
+              src="assets/logo/academic.svg"
+              alt="coin avatar"
+              class="w-12 h-12 border rounded-full"
+            />
+            <div class="flex items-start justify-between w-full">
+              <div class="pl-3 w-full">
+                <p
+                  tabindex="0"
+                  class="focus:outline-none text-sm leading-5 text-gray-800"
+                >
+                  NPSN: {{ school.sch_npsn }}
+                </p>
+                <p
+                  tabindex="0"
+                  class="focus:outline-none text-xl leading-normal pt-2 font-semibold text-gray-800"
+                >
+                  {{ school.sch_name }}
+                </p>
+              </div>
+              <div role="img" aria-label="link">
+                <Nuxt-Link :to="`/schools/${school.sch_npsn}`">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 transition ease-in duration-300 hover:text-yellow-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </Nuxt-Link>
+              </div>
+            </div>
+          </div>
+          <div class="px-2">
+            <p
+              tabindex="0"
+              class="focus:outline-none text-sm leading-5 py-4 text-gray-800"
             >
+              Location: {{ school.sch_address }},
+              {{ school.sch_kab_kota }}
+              {{ school.sch_province }}
+            </p>
+            <div tabindex="0" class="focus:outline-none flex justify-center">
               <div
-                v-for="(sch, index) in data.schools"
-                :key="index"
-                tabindex="0"
-                aria-label="card 1"
-                class="focus:outline-none lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
+                class="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500"
               >
-                <div class="flex items-center border-b border-gray-200 pb-6">
-                  <img
-                    src="assets/logo/academic.svg"
-                    alt="coin avatar"
-                    class="w-12 h-12 border rounded-full"
-                  />
-                  <div class="flex items-start justify-between w-full">
-                    <div class="pl-3 w-full">
-                      <p
-                        tabindex="0"
-                        class="focus:outline-none text-sm leading-5 text-gray-800"
-                      >
-                        NPSN: {{ sch.sch_npsn }}
-                      </p>
-                      <p
-                        tabindex="0"
-                        class="focus:outline-none text-xl leading-normal pt-2 font-semibold text-gray-800"
-                      >
-                        {{ sch.sch_name }}
-                      </p>
-                    </div>
-                    <div role="img" aria-label="link">
-                      <Nuxt-Link :to="`/schools/${sch.sch_id}`">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          class="h-6 w-6 transition ease-in duration-300 hover:text-yellow-500"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          stroke-width="2"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                          />
-                        </svg>
-                      </Nuxt-Link>
-                    </div>
-                  </div>
-                </div>
-                <div class="px-2">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-5 py-4 text-gray-800"
-                  >
-                    Location: {{ sch.sch_address }}, {{ sch.sch_kab_kota }}
-                    {{ sch.sch_province }}
-                  </p>
-                  <div
-                    tabindex="0"
-                    class="focus:outline-none flex justify-center"
-                  >
-                    <div
-                      class="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500"
-                    >
-                      {{ sch.sch_status }} Ready
-                    </div>
-                    <div
-                      class="py-2 px-4 ml-3 text-xs leading-3 text-white rounded-full bg-red-500"
-                    >
-                      {{ sch.sch_status }} Not Yet Ready
-                    </div>
-                  </div>
-                </div>
+                {{ school.sch_status }} Ready
+              </div>
+              <div
+                class="py-2 px-4 ml-3 text-xs leading-3 text-white rounded-full bg-red-500"
+              >
+                {{ school.sch_status }} Not Yet Ready
               </div>
             </div>
           </div>
         </div>
-
-        <!-- No result (if the query succeed but there's no data) -->
-        <div v-else>No result from the server</div>
-      </template>
-    </ApolloQuery>
+      </div>
+    </div>
   </div>
 </template>
 <script>
@@ -156,16 +134,18 @@
 
 export default {
   name: 'ShcoolsPage',
-  components: {},
-  // data() {
-  //   return {
-  //     searchSchool: '',
-  //   }
-  // },
+  computed: {
+    getSchools() {
+      return this.$store.state.schools.listSchool
+    },
+  },
+  mounted() {
+    this.fetchSchools()
+  },
   methods: {
-    // getSearchSchool() {
-    //   console.log(this.searchSchool)
-    // },
+    fetchSchools() {
+      this.$store.dispatch('schools/fetchSchools')
+    },
   },
 }
 </script>
