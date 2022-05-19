@@ -25,7 +25,7 @@
         <li>Regional: {{ detail.sch_kec }}</li>
         <li>City: {{ detail.sch_kab_kota }}</li>
         <li>Province: {{ detail.sch_province }}</li>
-        <li>ZIP Code: {{ detail.sch_zip_kode }}</li>
+        <li>ZIP Code: {{ detail.sch_zip_code }}</li>
       </ul>
     </div>
     <!-- End -->

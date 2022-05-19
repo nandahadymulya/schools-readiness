@@ -34,6 +34,10 @@ const actions = {
             sch_province
             sch_zip_code
             sch_address
+            id_readiness
+            readinessStatus {
+              status
+            }
           }
         }
       `,
@@ -54,6 +58,9 @@ const actions = {
             sch_province
             sch_zip_code
             sch_address
+            readinessStatus {
+              status
+            }
           }
         }
       `,

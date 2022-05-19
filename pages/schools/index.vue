@@ -107,20 +107,20 @@
               tabindex="0"
               class="focus:outline-none text-sm leading-5 py-4 text-gray-800"
             >
-              Location: {{ school.sch_address }},
-              {{ school.sch_kab_kota }}
-              {{ school.sch_province }}
+              Location: {{ school.sch_address }}, {{ school.sch_kab_kota }},
+              {{ school.sch_province }},
+              {{ school.sch_zip_code }}
             </p>
             <div tabindex="0" class="focus:outline-none flex justify-center">
               <div
                 class="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500"
               >
-                {{ school.sch_status }} Ready
+                <!-- {{ school.sch_zip_code }} -->
               </div>
               <div
                 class="py-2 px-4 ml-3 text-xs leading-3 text-white rounded-full bg-red-500"
               >
-                {{ school.sch_status }} Not Yet Ready
+                <!-- {{ school.sch_status }} Not Yet Ready -->
               </div>
             </div>
           </div>
