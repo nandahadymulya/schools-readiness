@@ -69,12 +69,11 @@
                   />
                 </div>
                 <div class="flex flex-col justify-center items-center lg:py-6">
-                  <button
+                  <input
                     class="border-2 w-3/4 h-12 border-blue-500 bg-blue-500 rounded-full text-blue-100"
                     type="submit"
-                  >
-                    Login
-                  </button>
+                    value="Login"
+                  />
                 </div>
               </form>
             </div>
