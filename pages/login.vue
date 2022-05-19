@@ -40,21 +40,20 @@
               class="flex justify-center align-center items-center card rounded-xl border-2 border-blue-100/500"
             >
               <form
-                action="/login"
                 method="POST"
                 class="flex flex-col justify-center w-full text-lg"
+                @submit.prevent="submit"
               >
                 <div
                   class="flex flex-col justify-center items-center font-light"
                 >
-                  <label class="lg:py-6" for="username"
-                    >Username / Email Address</label
-                  >
+                  <label class="lg:py-6" for="username">Username</label>
                   <input
+                    v-model="username"
                     class="text-center text-blue-500 border-2 w-3/4 h-12 border-blue-500 rounded-full"
                     type="text"
                     name="username"
-                    id="username"
+                    required="required"
                   />
                 </div>
                 <div
@@ -62,10 +61,11 @@
                 >
                   <label class="lg:py-6" for="username">Password</label>
                   <input
+                    v-model="password"
                     class="text-center text-blue-500 border-2 w-3/4 h-12 border-blue-500 rounded-full"
                     type="text"
-                    name="username"
-                    id="username"
+                    name="password"
+                    required="required"
                   />
                 </div>
                 <div class="flex flex-col justify-center items-center lg:py-6">
