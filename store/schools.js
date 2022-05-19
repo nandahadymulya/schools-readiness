@@ -3,6 +3,7 @@ import gql from 'graphql-tag'
 const state = () => ({
   listSchool: [],
   schoolDetail: {},
+  schoolRating: [],
 })
 
 const mutations = {
@@ -12,6 +13,10 @@ const mutations = {
 
   setSchoolDetail(state, param) {
     state.schoolDetail = param
+  },
+
+  setSchoolRating(state, param) {
+    state.schoolRating = param
   },
 }
 
@@ -55,6 +60,26 @@ const actions = {
       variables: { _eq },
     })
     store.commit('setSchoolDetail', response.data.schools)
+  },
+
+  async fetchSchoolRating(store) {
+    const response = await this.app.apolloProvider.defaultClient.query({
+      query: gql`
+        query getSchoolRating {
+          schools(limit: 3, where: { id_readiness: { _eq: 1 } }) {
+            sch_id
+            sch_npsn
+            sch_name
+            sch_address
+            sch_website
+            readinessStatus {
+              status
+            }
+          }
+        }
+      `,
+    })
+    store.commit('setSchoolRating', response.data.schools)
   },
 }
 
