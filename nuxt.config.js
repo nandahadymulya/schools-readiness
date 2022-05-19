@@ -19,12 +19,15 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    // ApolloClientPlugin
-    '~/plugins/apollo-client.js',
+    // ApolloClientPlugin,
+    // '~/plugins/apollo-client.js',
+    // '~/plugins/apollo-error-handler.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
+
+  loading: '~/components/LoadingBar.vue',
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
@@ -42,6 +45,7 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     // https://go.nuxtjs.dev/axios
+
     '@nuxtjs/apollo',
     '@nuxtjs/composition-api/module',
   ],
@@ -54,6 +58,9 @@ export default {
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    icon: {
+      sizes: [64, 120, 144, 152, 192, 384, 512],
+    },
     meta: {
       title: 'School.',
       author: 'Nanda Hady Mulya',
@@ -84,9 +91,5 @@ export default {
         autoprefixer: {},
       },
     },
-    transpile: [
-      // Vue Apollo Composable
-      '@vue/apollo-composable',
-    ],
   },
 }

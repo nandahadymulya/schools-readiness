@@ -1,11 +1,11 @@
 <template>
-  <div class="p-8">
+  <div>
     <!-- Main Cover -->
     <main>
       <div class="flex w-full h-96 justify-center align-center text-center">
         <div class="flex flex-col justify-center">
-          <h1 class="text-6xl font-bold text-blue-900">
-            List of Schools<br />
+          <h1 class="text-6xl font-extrabold text-blue-900">
+            List of Schools <br />
             <span class="text-yellow-500">Who are Participants</span>
           </h1>
           <p class="font-light lg:pt-5">
@@ -17,434 +17,110 @@
     </main>
     <!-- End -->
 
-    <div>
-      <ul>
-        <li v-for="sch in schools" :key="sch.id">
-          {{ sch.name }}
-        </li>
-      </ul>
-    </div>
+    <!-- Filter  -->
+    <!-- <label class="relative block">
+      <span class="sr-only">Search</span>
+      <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-5 w-5 stroke-slate-300"
+          fill="none"
+          viewBox="0 0 20 20"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+          />
+        </svg>
+      </span>
+      <input
+        v-model="searchSchool"
+        class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm"
+        placeholder="Search for anything..."
+        type="text"
+        name="search"
+        @keyup="getSearchSchool"
+      />
+    </label> -->
+    <!-- End -->
+
+    <!-- Content -->
     <div
-      class="
-    "
+      aria-label="group of cards"
+      tabindex="0"
+      class="focus:outline-none flex justify-center py-8"
     >
-      <div
-        aria-label="group of cards"
-        tabindex="0"
-        class="focus:outline-none py-8 w-full"
-      >
-        <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
-        <div class="lg:flex items-center justify-center w-full">
-          <div
-            tabindex="0"
-            aria-label="card 1"
-            class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
-          >
-            <div class="flex items-center border-b border-gray-200 pb-6">
-              <img
-                src="https://cdn.tuk.dev/assets/components/misc/doge-coin.png"
-                alt="coin avatar"
-                class="w-12 h-12 rounded-full"
-              />
-              <div class="flex items-start justify-between w-full">
-                <div class="pl-3 w-full">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
-                  >
-                    Dogecoin nerds
-                  </p>
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
-                  >
-                    36 members
-                  </p>
-                </div>
-                <div role="img" aria-label="bookmark">
+      <div class="grid grid-cols-1 lg:grid-cols-4 gap-4 place-content-center">
+        <div
+          v-for="(school, index) in getSchools"
+          :key="(school.sch_id, index)"
+          tabindex="0"
+          aria-label="card 1"
+          class="focus:outline-none lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
+        >
+          <div class="flex items-center border-b border-gray-200 pb-6">
+            <img
+              src="assets/logo/academic.svg"
+              alt="coin avatar"
+              class="w-12 h-12 border rounded-full"
+            />
+            <div class="flex items-start justify-between w-full">
+              <div class="pl-3 w-full">
+                <p
+                  tabindex="0"
+                  class="focus:outline-none text-sm leading-5 text-gray-800"
+                >
+                  NPSN: {{ school.sch_npsn }}
+                </p>
+                <p
+                  tabindex="0"
+                  class="focus:outline-none text-xl leading-normal pt-2 font-semibold text-gray-800"
+                >
+                  {{ school.sch_name }}
+                </p>
+              </div>
+              <div role="img" aria-label="link">
+                <Nuxt-Link :to="`/schools/${school.sch_npsn}`">
                   <svg
-                    class="focus:outline-none"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    class="h-6 w-6 transition ease-in duration-300 hover:text-yellow-500"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    stroke-width="2"
                   >
                     <path
-                      d="M10.5001 4.66667H17.5001C18.1189 4.66667 18.7124 4.9125 19.15 5.35009C19.5876 5.78767 19.8334 6.38117 19.8334 7V23.3333L14.0001 19.8333L8.16675 23.3333V7C8.16675 6.38117 8.41258 5.78767 8.85017 5.35009C9.28775 4.9125 9.88124 4.66667 10.5001 4.66667Z"
-                      stroke="#2C3E50"
-                      stroke-width="1.25"
                       stroke-linecap="round"
                       stroke-linejoin="round"
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
                     />
                   </svg>
-                </div>
-              </div>
-            </div>
-            <div class="px-2">
-              <p
-                tabindex="0"
-                class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
-              >
-                A group of people interested in dogecoin, the currency and a bit
-                of side for the meme and dof that we all know and love. These
-                cases are perfectly simple and easy to distinguish.
-              </p>
-              <div tabindex="0" class="focus:outline-none flex">
-                <div
-                  class="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #dogecoin
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #crypto
-                </div>
+                </Nuxt-Link>
               </div>
             </div>
           </div>
-          <div
-            aria-label="card 2"
-            tabindex="0"
-            class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
-          >
-            <div class="flex items-center border-b border-gray-200 pb-6">
+          <div class="px-2">
+            <p
+              tabindex="0"
+              class="focus:outline-none text-sm leading-5 py-4 text-gray-800"
+            >
+              Location: {{ school.sch_address }},
+              {{ school.sch_kab_kota }}
+              {{ school.sch_province }}
+            </p>
+            <div tabindex="0" class="focus:outline-none flex justify-center">
               <div
-                class="w-12 h-12 bg-gray-300 rounded-full flex flex-shrink-0"
-              ></div>
-              <div class="flex items-start justify-between w-full">
-                <div class="pl-3 w-full">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
-                  >
-                    Sale And Purchase
-                  </p>
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
-                  >
-                    36 members
-                  </p>
-                </div>
-                <div aria-label="bookmark" role="img">
-                  <svg
-                    class="focus:outline-none"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.5001 4.66667H17.5001C18.1189 4.66667 18.7124 4.9125 19.15 5.35009C19.5876 5.78767 19.8334 6.38117 19.8334 7V23.3333L14.0001 19.8333L8.16675 23.3333V7C8.16675 6.38117 8.41258 5.78767 8.85017 5.35009C9.28775 4.9125 9.88124 4.66667 10.5001 4.66667Z"
-                      stroke="#2C3E50"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="px-2">
-              <p
-                tabindex="0"
-                class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
+                class="py-2 px-4 text-xs leading-3 text-white rounded-full bg-green-500"
               >
-                A group of people interested in dogecoin, the currency and a bit
-                of side for the meme and dof that we all know and love. These
-                cases are perfectly simple and easy to distinguish.
-              </p>
-              <div tabindex="0" class="focus:outline-none flex">
-                <div
-                  class="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #Buy
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #Sell
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #Rent
-                </div>
+                {{ school.sch_status }} Ready
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex items-center justify-center w-full mt-7">
-          <div
-            aria-label="card 3"
-            tabindex="0"
-            class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
-          >
-            <div class="flex items-center border-b border-gray-200 pb-6">
               <div
-                class="w-12 h-12 bg-gray-300 rounded-full flex flex-shrink-0"
-              ></div>
-              <div class="flex items-start justify-between w-full">
-                <div class="pl-3 w-full">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
-                  >
-                    Family guy : A thread
-                  </p>
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
-                  >
-                    36 members
-                  </p>
-                </div>
-                <div role="img" aria-label="bookmark">
-                  <svg
-                    class="focus:outline-none"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.5001 4.66667H17.5001C18.1189 4.66667 18.7124 4.9125 19.15 5.35009C19.5876 5.78767 19.8334 6.38117 19.8334 7V23.3333L14.0001 19.8333L8.16675 23.3333V7C8.16675 6.38117 8.41258 5.78767 8.85017 5.35009C9.28775 4.9125 9.88124 4.66667 10.5001 4.66667Z"
-                      stroke="#2C3E50"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="px-2">
-              <p
-                tabindex="0"
-                class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
+                class="py-2 px-4 ml-3 text-xs leading-3 text-white rounded-full bg-red-500"
               >
-                A group of people interested in dogecoin, the currency and a bit
-                of side for the meme and dof that we all know and love. These
-                cases are perfectly simple and easy to distinguish.
-              </p>
-              <div tabindex="0" class="focus:outline-none flex">
-                <div
-                  class="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #dogecoin
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #crypto
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            aria-label="card 4"
-            tabindex="0"
-            class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
-          >
-            <div class="flex items-center border-b border-gray-200 pb-6">
-              <div
-                class="w-12 h-12 bg-gray-300 rounded-full flex flex-shrink-0"
-              ></div>
-              <div class="flex items-start justify-between w-full">
-                <div class="pl-3 w-full">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
-                  >
-                    DC vs Marvel
-                  </p>
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
-                  >
-                    36 members
-                  </p>
-                </div>
-                <div role="img" aria-label="bookmark">
-                  <svg
-                    class="focus:outline-none"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.5001 4.66667H17.5001C18.1189 4.66667 18.7124 4.9125 19.15 5.35009C19.5876 5.78767 19.8334 6.38117 19.8334 7V23.3333L14.0001 19.8333L8.16675 23.3333V7C8.16675 6.38117 8.41258 5.78767 8.85017 5.35009C9.28775 4.9125 9.88124 4.66667 10.5001 4.66667Z"
-                      stroke="#2C3E50"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="px-2">
-              <p
-                tabindex="0"
-                class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
-              >
-                A group of people interested in dogecoin, the currency and a bit
-                of side for the meme and dof that we all know and love. These
-                cases are perfectly simple and easy to distinguish.
-              </p>
-              <div tabindex="0" class="focus:outline-none flex">
-                <div
-                  class="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #dogecoin
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #crypto
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="lg:flex items-center justify-center w-full mt-7">
-          <div
-            aria-label="card 5"
-            tabindex="0"
-            class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
-          >
-            <div class="flex items-center border-b border-gray-200 pb-6">
-              <div
-                class="w-12 h-12 bg-gray-300 rounded-full flex flex-shrink-0"
-              ></div>
-              <div class="flex items-start justify-between w-full">
-                <div class="pl-3 w-full">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
-                  >
-                    Rick & Morty
-                  </p>
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
-                  >
-                    36 members
-                  </p>
-                </div>
-                <div role="img" aria-label="bookmark">
-                  <svg
-                    class="focus:outline-none"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.5001 4.66667H17.5001C18.1189 4.66667 18.7124 4.9125 19.15 5.35009C19.5876 5.78767 19.8334 6.38117 19.8334 7V23.3333L14.0001 19.8333L8.16675 23.3333V7C8.16675 6.38117 8.41258 5.78767 8.85017 5.35009C9.28775 4.9125 9.88124 4.66667 10.5001 4.66667Z"
-                      stroke="#2C3E50"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="px-2">
-              <p
-                tabindex="0"
-                class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
-              >
-                A group of people interested in dogecoin, the currency and a bit
-                of side for the meme and dof that we all know and love. These
-                cases are perfectly simple and easy to distinguish.
-              </p>
-              <div tabindex="0" class="focus:outline-none flex">
-                <div
-                  class="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #dogecoin
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #crypto
-                </div>
-              </div>
-            </div>
-          </div>
-          <div
-            aria-label="card 6"
-            tabindex="0"
-            class="focus:outline-none lg:w-4/12 lg:mr-7 lg:mb-0 mb-7 bg-white p-6 shadow rounded"
-          >
-            <div class="flex items-center border-b border-gray-200 pb-6">
-              <div
-                class="w-12 h-12 bg-gray-300 rounded-full flex flex-shrink-0"
-              ></div>
-              <div class="flex items-start justify-between w-full">
-                <div class="pl-3 w-full">
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-xl font-medium leading-5 text-gray-800"
-                  >
-                    La Liga: A history
-                  </p>
-                  <p
-                    tabindex="0"
-                    class="focus:outline-none text-sm leading-normal pt-2 text-gray-500"
-                  >
-                    36 members
-                  </p>
-                </div>
-                <div role="img" aria-label="bookmark">
-                  <svg
-                    class="focus:outline-none"
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M10.5001 4.66667H17.5001C18.1189 4.66667 18.7124 4.9125 19.15 5.35009C19.5876 5.78767 19.8334 6.38117 19.8334 7V23.3333L14.0001 19.8333L8.16675 23.3333V7C8.16675 6.38117 8.41258 5.78767 8.85017 5.35009C9.28775 4.9125 9.88124 4.66667 10.5001 4.66667Z"
-                      stroke="#2C3E50"
-                      stroke-width="1.25"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-            <div class="px-2">
-              <p
-                tabindex="0"
-                class="focus:outline-none text-sm leading-5 py-4 text-gray-600"
-              >
-                A group of people interested in dogecoin, the currency and a bit
-                of side for the meme and dof that we all know and love. These
-                cases are perfectly simple and easy to distinguish.
-              </p>
-              <div tabindex="0" class="focus:outline-none flex">
-                <div
-                  class="py-2 px-4 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #dogecoin
-                </div>
-                <div
-                  class="py-2 px-4 ml-3 text-xs leading-3 text-indigo-700 rounded-full bg-indigo-100"
-                >
-                  #crypto
-                </div>
+                {{ school.sch_status }} Not Yet Ready
               </div>
             </div>
           </div>
@@ -454,27 +130,22 @@
   </div>
 </template>
 <script>
-import gql from 'graphql-tag'
+// import filterSchools from '@/graphql/filterSchools.gql'
 
 export default {
   name: 'ShcoolsPage',
-  apollo: {
-    schools: gql`
-      query getSch {
-        schools {
-          sch_address
-          sch_id
-          sch_image
-          sch_kab_kota
-          sch_kec
-          sch_name
-          sch_npsn
-          sch_province
-          sch_website
-          sch_zip_code
-        }
-      }
-    `,
+  computed: {
+    getSchools() {
+      return this.$store.state.schools.listSchool
+    },
+  },
+  mounted() {
+    this.fetchSchools()
+  },
+  methods: {
+    fetchSchools() {
+      this.$store.dispatch('schools/fetchSchools')
+    },
   },
 }
 </script>

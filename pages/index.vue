@@ -2,55 +2,63 @@
   <div>
     <!-- Main Hero -->
     <main>
-      <div class="flex w-auto h-96 justify-center align-center">
-        <div class="flex flex-col justify-start align-center w-1/2">
-          <p>School education readiness.</p>
-          <h1>
+      <div class="flex w-full h-96 justify-center align-center">
+        <div class="flex flex-col w-1/2 justify-center align-center">
+          <p class="text-blue-500">School education readiness.</p>
+          <h1 class="text-5xl font-extrabold text-blue-900 lg:pt-5">
             Implementation <br />
-            <span>Blended-Learning</span> Methods
+            <span class="text-yellow-500">Blended-Learning</span> Methods
           </h1>
-          <p>
+          <p class="font-light lg:pt-5">
             become a professional education that enhances <br />
             students' experience and competitiveness internationally.
           </p>
-          <div>
-            <button>
+          <div class="flex gap-6 lg:pt-5">
+            <button
+              class="bg-blue-900 font-semibold lg:px-4 py-2 border-2 text-blue-100 border-blue-900 rounded transition duration-300 ease-in hover:bg-gradient-to-br hover:from-yellow-500 hover: to-blue-500 hover:border-white hover:text-blue-900"
+            >
               <NuxtLink to="/register"> Get Started </NuxtLink>
             </button>
-            <button>
+            <button
+              class="bg-white font-semibold lg:px-4 py-2 border-2 text-blue-900 border-slate-400 rounded transition duration-300 ease-in hover:bg-gradient-to-br hover:from-yellow-500 hover: to-blue-500 hover:border-white hover:text-blue-900"
+            >
               <NuxtLink to="/about"> Learn More </NuxtLink>
             </button>
           </div>
         </div>
         <div class="flex justify-end w-1/2">
-          <img src="main-img.jpg" alt="SCH Main Image" />
+          <img src="assets/img/home.jpg" alt="SCH Main Image" />
         </div>
       </div>
     </main>
     <!-- End -->
 
     <!-- Section Technology Development -->
-    <section>
+    <section class="lg:py-28">
       <div class="title-section">
-        <p>Depedencies</p>
-        <h3>Technology Development</h3>
-        <div class="flex">
-          <div
-            v-for="item in depedencies"
-            :key="item.logo"
-            class="card w-10 h-10 bg-slate-500"
-          >
-            {{ item.logo }}
+        <div class="flex flex-col justify-center align-center text-center">
+          <p class="text-blue-500">Depedencies</p>
+          <h3 class="text-4xl font-bold text-blue-900">
+            Technology Development
+          </h3>
+        </div>
+        <div class="flex justify-center align-center lg:pt-20 lg:gap-36">
+          <div v-for="item in depedencies" :key="item.logo" class="w-16 h-16">
+            <img :src="item.logo" alt="" />
           </div>
         </div>
       </div>
     </section>
 
     <!-- Section Rating of Schools -->
-    <section>
-      <p>Depedencies</p>
-      <h3>Technology Development</h3>
-      <div class="flex">
+    <section class="lg: py-28">
+      <div class="flex flex-col justify-center align-center text-center">
+        <p class="text-blue-500">Junior High Schools</p>
+        <h3 class="text-4xl font-bold text-blue-900">
+          Rating of Schools Readiness
+        </h3>
+      </div>
+      <div class="flex lg:pt-20 justify-center align-center">
         <!-- Card -->
         <div class="card bg-[#15263F] w-80 h-[32rem] rounded-xl p-6 space-y-4">
           <a href="#">
@@ -139,25 +147,25 @@ export default {
     return {
       depedencies: [
         {
-          logo: 1,
+          logo: 'assets/logo/js.svg',
         },
         {
-          logo: 2,
+          logo: 'assets/logo/nuxt.svg',
         },
         {
-          logo: 3,
+          logo: 'assets/logo/hasura.svg',
         },
         {
-          logo: 4,
+          logo: 'assets/logo/graphql.svg',
         },
         {
-          logo: 5,
+          logo: 'assets/logo/apollo.svg',
         },
         {
-          logo: 6,
+          logo: 'assets/logo/python.svg',
         },
         {
-          logo: 7,
+          logo: 'assets/logo/django.svg',
         },
       ],
     }

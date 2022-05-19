@@ -1,0 +1,14 @@
+mutation MyQuery($schInput: SchInputFilter) {
+  schools(input: $schInput) {
+    sch_id
+    sch_npsn
+    sch_name
+    sch_address
+    sch_kec
+    sch_kab_kota
+    sch_province
+    sch_zip_code
+    sch_image
+    sch_website
+  }
+}

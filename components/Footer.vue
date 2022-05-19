@@ -8,10 +8,10 @@
     </div>
     <div class="flex gap-2 justify-center align-items-center">
       <a href="https://linkedin.com/in/nandahadymulya">
-        <img src="linkedin.svg" alt="linkedin" />
+        <img src="assets/logo/linkedin.svg" alt="linkedin" />
       </a>
       <a href="https://github.com/nandahadymulya">
-        <img src="github.svg" alt="linkedin" />
+        <img src="assets/logo/github.svg" alt="linkedin" />
       </a>
     </div>
   </footer>
