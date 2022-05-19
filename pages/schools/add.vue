@@ -11,5 +11,8 @@
 <script>
 export default {
   name: 'AddSchoolPage',
+  computed: {},
+  mounted() {},
+  methods: {},
 }
 </script>
